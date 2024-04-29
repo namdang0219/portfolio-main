@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bgGray
+  }
+}
+
+@layer components {
+  .container {
+    @apply w-full max-w-[1040px] py-[80px] px-5 mx-auto sm:py-10
+  }
+}
