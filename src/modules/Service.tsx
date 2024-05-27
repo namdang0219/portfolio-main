@@ -5,7 +5,7 @@ import React from 'react';
 
 const Service = () => {
   return (
-    <div className={`container text-center`}>
+    <div id='service' className={`container text-center  scroll-m-10`}>
       <Title>{"What I'm Doing"}</Title>
       <SubLine className='sm:mx-6'>I love what i do, i take a great pride in what i do</SubLine>
       <div className='mx-auto w-full max-w-[180px] h-[0.5px] bg-black mt-6 mb-12'></div>

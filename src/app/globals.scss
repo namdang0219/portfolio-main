@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-bgGray
   }
@@ -12,4 +15,24 @@
   .container {
     @apply w-full max-w-[1040px] py-[80px] px-5 mx-auto sm:py-10
   }
+  .slider::-webkit-scrollbar {
+    height: 5px;
+  }
+  
+  .slider::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .slider::-webkit-scrollbar-thumb {
+    background-color: rgb(196, 196, 196);
+    border-radius: 100rem;
+  }
+}
+
+.scrollbar-hidden {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+ display: none;
 }

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 interface ISubLine {
-  children: string,
+  children: ReactNode,
   className?: string
 }
 
 const SubLine = ({children, className}: ISubLine) => {
   return (
-    <p className={`${className} text-[22px] font-light text-subGray sm:text-[16px]`}>
+    <p className={` text-[22px] font-light text-subGray sm:text-[16px] ${className}`}>
       {children}
     </p>
   );

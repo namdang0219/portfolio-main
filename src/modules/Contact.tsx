@@ -5,7 +5,10 @@ import React from "react";
 
 const Contact = () => {
 	return (
-		<div className="container flex gap-[100px] sm:gap-10 flex-wrap">
+		<div
+			id="contact"
+			className="container flex gap-[100px] sm:gap-10 sm:block flex-wrap  scroll-m-10"
+		>
 			<div>
 				<Title className="mb-[50px] sm:mb-8">Contact Info</Title>
 				{contactInfos.map((item) => (
@@ -14,7 +17,10 @@ const Contact = () => {
 						className="flex items-center gap-2 mb-4 sm:mb-5"
 					>
 						<span className="sm:scale-75">{item.icon}</span>
-						<span className="font-light text-[20px] sm:text-base tracking-widest sm:tracking-normal">{`${item.type}:`} <span className="tracking-wider">{`${item.content}`}</span></span>
+						<span className="font-light text-[20px] sm:text-base tracking-widest sm:tracking-normal">
+							{`${item.type}:`}{" "}
+							<span className="tracking-wider">{`${item.content}`}</span>
+						</span>
 					</div>
 				))}
 			</div>

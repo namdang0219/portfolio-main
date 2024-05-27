@@ -6,7 +6,7 @@ import React from "react";
 
 const Portfolio = () => {
 	return (
-		<section className="container">
+		<section id="work" className="container  scroll-m-10">
 			<div className="text-center">
 				<Title>My Portfolio</Title>
 				<SubLine className="sm:mx-6">

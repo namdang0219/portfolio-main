@@ -25,32 +25,32 @@ const navLinks = [
 	{
 		id: 1,
 		name: "HOME",
-		href: "/home",
+		href: "/#home",
 	},
 	{
 		id: 2,
 		name: "ABOUT",
-		href: "/about",
+		href: "/#about",
 	},
 	{
 		id: 3,
 		name: "SERVICE",
-		href: "/service",
+		href: "/#service",
 	},
 	{
 		id: 4,
 		name: "WORK",
-		href: "/work",
+		href: "/#work",
 	},
 	{
 		id: 5,
 		name: "PERSONAL",
-		href: "/personal",
+		href: "/#personal",
 	},
 	{
 		id: 6,
 		name: "CONTACT",
-		href: "/contact",
+		href: "#contact",
 	},
 ];
 

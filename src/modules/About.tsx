@@ -11,7 +11,8 @@ interface IAbout {
 const About = ({ className }: IAbout) => {
 	return (
 		<div
-			className={`${className} container flex items-center sm:flex-wrap-reverse justify-between gap-5 sm:gap-0`}
+		id="about"
+			className={`${className} container flex items-center sm:flex-wrap-reverse justify-between gap-5 sm:gap-0 scroll-m-10`}
 		>
 			<div>
 				<Title className="sm:text-center">About Me</Title>
