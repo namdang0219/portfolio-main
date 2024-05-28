@@ -1,7 +1,9 @@
+"use client";
+import React, { ReactNode } from "react";
 import Button from "@/components/button/Button";
 import Input from "@/components/input/Input";
 import Title from "@/components/title/Title";
-import React from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
 	return (
@@ -11,37 +13,64 @@ const Contact = () => {
 		>
 			<div>
 				<Title className="mb-[50px] sm:mb-8">Contact Info</Title>
-				{contactInfos.map((item) => (
-					<div
-						key={item.type}
-						className="flex items-center gap-2 mb-4 sm:mb-5"
-					>
-						<span className="sm:scale-75">{item.icon}</span>
-						<span className="font-light text-[20px] sm:text-base tracking-widest sm:tracking-normal">
-							{`${item.type}:`}{" "}
-							<span className="tracking-wider">{`${item.content}`}</span>
-						</span>
-					</div>
+				{contactInfos.map((item, index) => (
+					<ContactItem
+						key={index}
+						index={index}
+						item={item}
+					></ContactItem>
 				))}
 			</div>
 			<form className="flex-1">
 				<div className="mb-10">
 					<Title className="mb-[50px] sm:mb-8">Contact Form</Title>
-					<Input name="name" placeholder="氏名を入力...">
-						氏名
-					</Input>
-					<Input name="email" placeholder="メールを入力...">
-						メール
-					</Input>
-					<Input name="content" placeholder="内容を入力...">
-						内容
-					</Input>
+					{inputItems.map((item, index) => (
+						<Input key={index} index={index} data={item}></Input>
+					))}
 				</div>
 				<Button>送信</Button>
 			</form>
 		</div>
 	);
 };
+
+const inputItems = [
+	{ name: "name", placeholder: "氏名を入力...", label: "氏名" },
+	{ name: "email", placeholder: "メールを入力...", label: "メール" },
+	{ name: "content", placeholder: "内容を入力...", label: "内容" },
+];
+
+function ContactItem({
+	item: { icon, type, content },
+	index,
+}: {
+	item: { icon: ReactNode; type: string; content: string };
+	index: number;
+}) {
+	return (
+		<motion.div
+			initial={{ opacity: 0, translateY: 20, scale: 1 }}
+			whileInView={{
+				opacity: 1,
+				translateY: 0,
+				scale: 1,
+				rotate: 0,
+				transition: {
+					delay: index * 0.2,
+					duration: 0.4,
+				},
+			}}
+		>
+			<div className="flex items-center gap-2 mb-4 sm:mb-5">
+				<span className="sm:scale-75">{icon}</span>
+				<span className="font-light text-[20px] sm:text-base tracking-widest sm:tracking-normal">
+					{`${type}:`}{" "}
+					<span className="tracking-wider">{`${content}`}</span>
+				</span>
+			</div>
+		</motion.div>
+	);
+}
 
 const contactInfos = [
 	{

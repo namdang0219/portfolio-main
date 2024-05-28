@@ -39,13 +39,13 @@ const navLinks = [
 	},
 	{
 		id: 4,
-		name: "WORK",
-		href: "/#work",
+		name: "EDUCATION",
+		href: "/#education",
 	},
 	{
 		id: 5,
-		name: "PERSONAL",
-		href: "/#personal",
+		name: "WORK",
+		href: "/#work",
 	},
 	{
 		id: 6,

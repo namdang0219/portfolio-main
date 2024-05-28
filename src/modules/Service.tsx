@@ -7,11 +7,11 @@ const Service = () => {
   return (
     <div id='service' className={`container text-center  scroll-m-10`}>
       <Title>{"What I'm Doing"}</Title>
-      <SubLine className='sm:mx-6'>I love what i do, i take a great pride in what i do</SubLine>
+      <SubLine className='sm:mx-6 mx-auto'>デザインエンジニアを目指して、デザインからコーディングまでやっています。</SubLine>
       <div className='mx-auto w-full max-w-[180px] h-[0.5px] bg-black mt-6 mb-12'></div>
       <div className='grid grid-cols-3 gap-x-5 sm:grid-cols-1 sm:gap-y-5 md:grid-cols-2 md:gap-y-5 place-items-center'>
-        {services.map(item => (
-          <ServiceItem key={item.serviceName} item={item}></ServiceItem>
+        {services.map((item, index) => (
+          <ServiceItem key={item.serviceName} index={index} item={item}></ServiceItem>
         ))}
       </div>
     </div>

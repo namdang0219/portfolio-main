@@ -12,6 +12,7 @@ const Footer = ({className}: {className?: string}) => {
 						<Link
 							key={item.name}
 							href={item.href}
+              target='_blank'
 							className="size-12 sm:scale-75 flex items-center justify-center bg-white bg-opacity-10 hover:bg-opacity-20 ransition-all rounded-full"
 						>
 							{item.icon}
@@ -19,6 +20,7 @@ const Footer = ({className}: {className?: string}) => {
 					))}
 				</div>
       </div>
+      
       <span className='uppercase text-[22px] sm:text-base font-light opacity-80 tracking-wider'>Thanks for visit my portfolio!</span>
       <span className='text-sm sm:text-xs opacity-60 tracking-wider'>&copy; Copyright by NamDang 2024</span>
     </div>

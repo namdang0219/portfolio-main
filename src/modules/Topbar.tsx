@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
 import styled from "styled-components";
+import Link from "next/link";
 
 const MenuIconStyles = styled.div`
 	position: relative;
@@ -110,7 +111,7 @@ const MenuIconStyles = styled.div`
 	}
 `;
 
-const Topbar = ({className} : {className?: string}) => {
+const Topbar = ({ className }: { className?: string }) => {
 	const [topbarColor, setTopbarColor] = useState<boolean>(false);
 	const [menuActive, setMenuActive] = useState<boolean>(false);
 	useEffect(() => {
@@ -130,9 +131,12 @@ const Topbar = ({className} : {className?: string}) => {
 			} ${className} transition-all  fixed z-50 w-full top-0`}
 		>
 			<div className="flex items-center justify-between w-full max-w-[1240px]  px-5 mx-auto py-3">
-				<div className="text-[30px] sm:text-[22px] font-bold">
+				<Link
+					href={"/#home"}
+					className="text-[30px] sm:text-[22px] font-bold"
+				>
 					Portfolio
-				</div>
+				</Link>
 				<Nav className="sm:hidden"></Nav>
 				<div className="sm:hidden">
 					<svg

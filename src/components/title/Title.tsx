@@ -7,7 +7,7 @@ interface ITitle {
 
 const Title = ({children, className}: ITitle) => {
   return (
-    <h2 className={`${className} text-[40px] sm:text-[26px] font-semibold`}>
+    <h2 className={`${className} text-[40px] sm:text-[26px] font-semibold mb-2`}>
       {children}
     </h2>
   );

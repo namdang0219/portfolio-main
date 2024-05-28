@@ -7,7 +7,7 @@ interface ISubLine {
 
 const SubLine = ({children, className}: ISubLine) => {
   return (
-    <p className={` text-[22px] font-light text-subGray sm:text-[16px] ${className}`}>
+    <p className={`text-[20px] font-light text-subGray leading-relaxed sm:text-[16px] tracking-wider ${className}`}>
       {children}
     </p>
   );

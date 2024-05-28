@@ -1,7 +1,7 @@
 export const socials = [
 	{
 		name: "facebook",
-		href: "/",
+		href: "https://www.facebook.com/namdangg1902",
 		icon: (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@ export const socials = [
 	},
 	{
 		name: "instagram",
-		href: "/",
+		href: "https://www.instagram.com/namdang_0219/",
 		icon: (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ export const socials = [
 	},
 	{
 		name: "github",
-		href: "/",
+		href: "https://github.com/namdang0219",
 		icon: (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

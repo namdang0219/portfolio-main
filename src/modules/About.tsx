@@ -36,6 +36,7 @@ const About = ({ className }: IAbout) => {
 					alt="about-me-image"
 					fill
 					className="object-cover"
+					sizes="1000px"
 				></Image>
 			</div>
 		</div>
