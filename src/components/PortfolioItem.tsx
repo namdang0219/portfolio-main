@@ -35,7 +35,7 @@ const PortfolioItem = ({
 				},
 			}}
 		>
-			<div onClick={() => push('/movie')} className="bg-white shadow-md group sm:aspect-square sm:flex sm:flex-col cursor-pointer">
+			<div onClick={() => push('/movie')} className="bg-white dark:bg-itemBgDark shadow-md group sm:aspect-square sm:flex sm:flex-col cursor-pointer">
 				<div className="relative h-[254px] sm:flex-1 overflow-hidden">
 					<Image
 						src={thumb}
@@ -51,7 +51,7 @@ const PortfolioItem = ({
 							{time}
 						</span>
 					</div>
-					<SubLine className="text-base">{technique}</SubLine>
+					<SubLine className="text-base dark:text-gray-400">{technique}</SubLine>
 					<p className="text-base sm:mt-1 font-light line-clamp-2">
 						{desc}
 					</p>

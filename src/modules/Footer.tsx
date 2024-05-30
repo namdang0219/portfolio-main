@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer = ({className}: {className?: string}) => {
   return (
-    <div className={`${className} p-7 bg-[#151515] text-white flex flex-col items-center gap-3`}>
+    <div className={`${className} p-7 bg-[#151515] dark:bg-gray-800 text-white flex flex-col items-center gap-3`}>
       <span className='text-[32px] font-bold sm:text-[28px]'>Portfolio</span>
       <div className='flex items-center gap-5'>
       <div className="flex items-center justify-center space-x-4">

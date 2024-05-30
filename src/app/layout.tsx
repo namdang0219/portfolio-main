@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
+import { useEffect, useState } from "react";
+import { ThemeProvider, useTheme } from "@/contexts/theme-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +19,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body id="home" className={inter.className}>
-				<div>{children}</div>
+				<ThemeProvider>{children}</ThemeProvider>
 			</body>
 		</html>
 	);

@@ -28,11 +28,9 @@ const Header = ({ className }: IHeader) => {
 					Dang Xuan Nam
 				</h1>
 				<div className="text-[22px]  h-8 sm:text-[14px] font-light text-center mb-4 sm:mb-2">
-					{/* {"I'm a "}
-					<span className="font-medium">{"Design Engineer"}</span> */}
 					<TypeAnimation
 						sequence={[
-							"私はデザインエンジニア！",
+							"私はデザインエンジニアです！",
 							1000,
 							"I'm a Design Engineer！",
 							1000,

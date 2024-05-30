@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: 'selector',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,6 +18,8 @@ const config: Config = {
       colors: {
         subGray: '#858585',
         bgGray: '#f8f8f8',
+        itemBgDark: '#3c4043',
+        textDark: '#f8f9fa'
       }
     },
     screens: {

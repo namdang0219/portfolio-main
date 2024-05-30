@@ -11,7 +11,7 @@ interface IButton {
 const Button = ({ children, className }: IButton) => {
 	return (
 		<button
-			className={`${className} w-[180px] h-[50px] sm:w-[120px] sm:h-[38px] flex items-center justify-center border border-black sm:border-[0.75px] text-[18px] sm:text-[14px]`}
+			className={`${className} w-[180px] h-[50px] sm:w-[120px] sm:h-[38px] flex items-center justify-center border border-black dark:border-gray-400 sm:border-[0.75px] text-[18px] sm:text-[14px]`}
 		>
 			{children}
 		</button>

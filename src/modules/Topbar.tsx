@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Nav from "./Nav";
 import styled from "styled-components";
 import Link from "next/link";
+import { useTheme } from "@/contexts/theme-context";
 
 const MenuIconStyles = styled.div`
 	position: relative;
@@ -114,6 +115,7 @@ const MenuIconStyles = styled.div`
 const Topbar = ({ className }: { className?: string }) => {
 	const [topbarColor, setTopbarColor] = useState<boolean>(false);
 	const [menuActive, setMenuActive] = useState<boolean>(false);
+	const { setDarkMode, darkMode } = useTheme();
 	useEffect(() => {
 		const handleScroll = () => {
 			if (window.scrollY > 50) {
@@ -124,10 +126,11 @@ const Topbar = ({ className }: { className?: string }) => {
 		};
 		window.addEventListener("scroll", handleScroll);
 	}, []);
+
 	return (
 		<div
 			className={`${
-				topbarColor ? "bg-white text-black shadow-md" : ""
+				topbarColor ? "bg-white dark:bg-gray-800 text-black dark:text-textDark  shadow-md" : ""
 			} ${className} transition-all  fixed z-50 w-full top-0`}
 		>
 			<div className="flex items-center justify-between w-full max-w-[1240px]  px-5 mx-auto py-3">
@@ -138,11 +141,15 @@ const Topbar = ({ className }: { className?: string }) => {
 					Portfolio
 				</Link>
 				<Nav className="sm:hidden"></Nav>
-				<div className="sm:hidden">
+				{/* Icon dark mode  */}
+				<div
+					className="sm:hidden cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-all p-2 rounded-full"
+					onClick={() => setDarkMode(!darkMode)}
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						width={24}
-						height={24}
+						width={30}
+						height={30}
 						viewBox="0 0 24 24"
 					>
 						<g fill="currentColor" fillOpacity={0}>
@@ -184,6 +191,8 @@ const Topbar = ({ className }: { className?: string }) => {
 						</path>
 					</svg>
 				</div>
+
+				{/* Menu Icon in mobile screen  */}
 				<MenuIconStyles
 					onClick={() => setMenuActive(!menuActive)}
 					className="hidden sm:block"

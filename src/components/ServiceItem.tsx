@@ -30,18 +30,18 @@ const ServiceItem = ({
 				},
 			}}
 		>
-			<section className="p-7 bg-white shadow-md">
+			<section className="p-7 bg-white shadow-md dark:bg-itemBgDark">
 				<div className="relative mb-6 flex items-center justify-center">
 					<Image
 						src={imagePath}
 						alt={serviceName}
-						className="object-contain h-[120px] w-auto"
+						className="object-contain h-[120px] w-auto dark:invert"
 						width={200}
 						height={200}
 					></Image>
 				</div>
 				<ChildTitle className="mb-2">{serviceName}</ChildTitle>
-				<p className="font-light sm:text-sm text-base text-subGray tracking-wider leading-relaxed">
+				<p className="font-light sm:text-sm text-base text-subGray dark:text-gray-300 tracking-wider leading-relaxed">
 					{desc}
 				</p>
 			</section>

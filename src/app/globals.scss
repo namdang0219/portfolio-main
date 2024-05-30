@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-bgGray
+    @apply bg-bgGray dark:bg-[#141414] dark:text-textDark
   }
 }
 
