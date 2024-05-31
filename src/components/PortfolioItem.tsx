@@ -8,19 +8,21 @@ import { useRouter } from "next/navigation";
 
 interface IPortfolioItem {
 	item: {
-		thumb: string;
-		title?: string;
-		technique: string;
+		banner: string;
+		titleLarge?: string;
+		techniques: string[];
 		desc?: string;
 		time: string;
+		slug: string;
 	};
-	index: number
+	index: number;
 }
 
 const PortfolioItem = ({
-	item: { thumb, title, technique, desc, time }, index
+	item: { banner, titleLarge, techniques, desc, time, slug },
+	index,
 }: IPortfolioItem) => {
-	const {push} = useRouter()
+	const { push } = useRouter();
 	return (
 		<motion.div
 			initial={{ opacity: 0, translateY: 80, scale: 0.8 }}
@@ -35,23 +37,29 @@ const PortfolioItem = ({
 				},
 			}}
 		>
-			<div onClick={() => push('/movie')} className="bg-white dark:bg-itemBgDark shadow-md group sm:aspect-square sm:flex sm:flex-col cursor-pointer">
-				<div className="relative h-[254px] sm:flex-1 overflow-hidden">
+			<div
+				onClick={() => push(`/product/${slug}`)}
+				className="bg-white rounded-md overflow-hidden dark:bg-itemBgDark shadow-md group sm:flex sm:flex-col cursor-pointer"
+			>
+				<div className="relative overflow-hidden">
 					<Image
-						src={thumb}
+						src={banner}
 						alt="product-thumb"
-						fill
-						className="object-cover object-center group-hover:scale-[1.03] transition-all"
+						width={600}
+						height={600}
+						className="object-cover w-full object-center aspect-[16/8] group-hover:scale-[1.03] transition-all"
 					></Image>
 				</div>
 				<div className="p-4">
 					<div className="flex items-center justify-between">
-						<ChildTitle>{title}</ChildTitle>
+						<ChildTitle className="line-clamp-1">{titleLarge}</ChildTitle>
 						<span className="text-sm font-normal text-subGray">
 							{time}
 						</span>
 					</div>
-					<SubLine className="text-base dark:text-gray-400">{technique}</SubLine>
+					<SubLine className="text-base dark:text-gray-400">
+						{techniques.join(", ")}
+					</SubLine>
 					<p className="text-base sm:mt-1 font-light line-clamp-2">
 						{desc}
 					</p>

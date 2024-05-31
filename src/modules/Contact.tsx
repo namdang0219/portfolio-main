@@ -23,7 +23,7 @@ const Contact = () => {
 			</div>
 			<form className="flex-1">
 				<div className="mb-10">
-					<Title className="mb-[50px] sm:mb-8">Contact Form</Title>
+					<Title className="mb-[50px] sm:mb-8">Contact Form (開発中)</Title>
 					{inputItems.map((item, index) => (
 						<Input key={index} index={index} data={item}></Input>
 					))}

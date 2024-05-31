@@ -16,7 +16,7 @@
     @apply w-full max-w-[1040px] py-[80px] px-5 mx-auto sm:py-10
   }
   .slider::-webkit-scrollbar {
-    height: 5px;
+    height: 8px;
   }
   
   .slider::-webkit-scrollbar-track {
@@ -25,7 +25,9 @@
   
   .slider::-webkit-scrollbar-thumb {
     background-color: rgb(196, 196, 196);
+    @apply dark:bg-gray-700;
     border-radius: 100rem;
+    cursor: pointer;
   }
 }
 

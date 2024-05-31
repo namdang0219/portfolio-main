@@ -4,6 +4,7 @@ import SubLine from "@/components/subLine/SubLine";
 import Title from "@/components/title/Title";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 interface IAbout {
@@ -57,6 +58,7 @@ const About = ({ className }: IAbout) => {
 export default About;
 
 function AboutContent({}) {
+	const {push} = useRouter()
 	return (
 		<div>
 			<Title className="sm:text-center">About Me</Title>
@@ -68,7 +70,7 @@ function AboutContent({}) {
 				デザインの面もやっていて、色々な作品を自分でデザインしてから、コーディングを行なってます。
 			</p>
 			<div className="flex items-center space-x-6 sm:justify-center">
-				<Button className="bg-black text-white">Contact Me</Button>
+				<Button onClick={() => push('/#contact')} className="bg-black text-white">Contact Me</Button>
 				<Button>Download CV</Button>
 			</div>
 		</div>

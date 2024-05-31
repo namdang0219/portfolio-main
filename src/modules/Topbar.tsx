@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
 import styled from "styled-components";
 import Link from "next/link";
@@ -130,7 +130,7 @@ const Topbar = ({ className }: { className?: string }) => {
 	return (
 		<div
 			className={`${
-				topbarColor ? "bg-white dark:bg-gray-800 text-black dark:text-textDark  shadow-md" : ""
+				topbarColor ? "bg-white dark:bg-gray-800 text-black dark:text-textDark  shadow-md" :  "dark:bg-gray-800"
 			} ${className} transition-all  fixed z-50 w-full top-0`}
 		>
 			<div className="flex items-center justify-between w-full max-w-[1240px]  px-5 mx-auto py-3">
