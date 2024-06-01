@@ -7,8 +7,8 @@ export const data: dataTypes = {
 			titleShort: "My Movie",
       time: '2024/03', 
 			titleLarge: "My Movie (with TMDB Api)",
-			publicSite: "https://namdang0219-portfolio.vercel.app/",
-			github: "https://github.com/namdang0219/my-movie",
+			publicSite: "https://browse-movies-alpha.vercel.app/",
+			github: "https://github.com/namdang0219/browse-movies",
 			desc: "Movie Browser は TMDB API を使用して、映画の情報を取得するアプリケーションです。流行っている映画や各時代有名な映画を見れて、ログインしてから気になった映画を保存することもできます。次回のログインで、全部保存した映画が残ります。好きな映画があれば、検索できて、映画の情報を見ることができます。",
 			techniques: ["React", "Firebase", "Tailwind"],
 			purpose: [

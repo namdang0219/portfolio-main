@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import styled from "styled-components";
 import Link from "next/link";
 import { useTheme } from "@/contexts/theme-context";
+import { useParams } from "next/navigation";
 
 const MenuIconStyles = styled.div`
 	position: relative;
@@ -115,6 +116,7 @@ const MenuIconStyles = styled.div`
 const Topbar = ({ className }: { className?: string }) => {
 	const [topbarColor, setTopbarColor] = useState<boolean>(false);
 	const [menuActive, setMenuActive] = useState<boolean>(false);
+	const params = useParams();
 	const { setDarkMode, darkMode } = useTheme();
 	useEffect(() => {
 		const handleScroll = () => {
@@ -127,11 +129,21 @@ const Topbar = ({ className }: { className?: string }) => {
 		window.addEventListener("scroll", handleScroll);
 	}, []);
 
+	function handleTopbarColor() {
+		if (!params.slug) {
+			if (topbarColor) {
+				return "bg-white dark:bg-gray-800 text-black dark:text-textDark  shadow-md";
+			} else {
+				return " text-white bg-transparent";
+			}
+		} else {
+			return "bg-white dark:bg-gray-800 text-black dark:text-textDark shadow-md";
+		}
+	}
+
 	return (
 		<div
-			className={`${
-				topbarColor ? "bg-white dark:bg-gray-800 text-black dark:text-textDark  shadow-md" :  "dark:bg-gray-800"
-			} ${className} transition-all  fixed z-50 w-full top-0`}
+			className={`${handleTopbarColor()} ${className} transition-all  fixed z-50 w-full top-0`}
 		>
 			<div className="flex items-center justify-between w-full max-w-[1240px]  px-5 mx-auto py-3">
 				<Link
@@ -143,7 +155,7 @@ const Topbar = ({ className }: { className?: string }) => {
 				<Nav className="sm:hidden"></Nav>
 				{/* Icon dark mode  */}
 				<div
-					className="sm:hidden cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-all p-2 rounded-full"
+					className="sm:hidden  cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-all p-2 rounded-full"
 					onClick={() => setDarkMode(!darkMode)}
 				>
 					<svg

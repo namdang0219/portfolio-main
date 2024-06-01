@@ -1,3 +1,4 @@
+'use client'
 import About from "@/modules/About";
 import Contact from "@/modules/Contact";
 import Education from "@/modules/Education";
@@ -5,6 +6,7 @@ import Footer from "@/modules/Footer";
 import Header from "@/modules/Header";
 import Portfolio from "@/modules/Portfolio";
 import Service from "@/modules/Service";
+import { useParams, usePathname } from "next/navigation";
 import React from "react";
 
 const Home = () => {

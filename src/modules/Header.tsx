@@ -17,7 +17,7 @@ const Header = ({ className }: IHeader) => {
 				backgroundImage: "url('/assets/banner.jpg')",
 			}}
 		>
-			<Topbar></Topbar>
+			
 			<section className="sm:mt-16">
 				<div className="text-[22px] flex items-center gap-4 sm:text-[18px] font-light text-center">
 					<div className="w-full h-[0.1px] bg-white bg-opacity-40"></div>

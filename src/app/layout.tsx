@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.scss";
 import { useEffect, useState } from "react";
 import { ThemeProvider, useTheme } from "@/contexts/theme-context";
+import Topbar from "@/modules/Topbar";
+import { useParams } from "next/navigation";
+import MainLayout from "@/components/layouts/MainLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +22,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body id="home" className={inter.className}>
-				<ThemeProvider>{children}</ThemeProvider>
+				<ThemeProvider>
+					<MainLayout>{children}</MainLayout>
+				</ThemeProvider>
 			</body>
 		</html>
 	);

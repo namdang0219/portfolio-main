@@ -11,7 +11,7 @@ import Footer from "@/modules/Footer";
 import Nav from "@/modules/Nav";
 import Topbar from "@/modules/Topbar";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import React from "react";
 
 const ProductDetail = () => {
@@ -37,9 +37,10 @@ const ProductDetail = () => {
 
 	if (!productData) return;
 
+	
 	return (
 		<div>
-			<Topbar className="bg-white"></Topbar>
+			{/* <Topbar className="bg-white"></Topbar> */}
 			{/* banner  */}
 			<div className="w-full max-w-[1240px] px-5 mx-auto mt-[100px]">
 				<div className="relative">
