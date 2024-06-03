@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useTheme } from "@/contexts/theme-context";
 import { useParams } from "next/navigation";
+import { Slide, toast } from "react-toastify";
 
 const MenuIconStyles = styled.div`
 	position: relative;
@@ -129,6 +130,28 @@ const Topbar = ({ className }: { className?: string }) => {
 		window.addEventListener("scroll", handleScroll);
 	}, []);
 
+	function handleDarkMode() {
+		if (darkMode == false) {
+			setDarkMode(true);
+			toast.success("ダークモードに変換しました！", {
+				position: "top-center",
+				autoClose: 1000,
+				hideProgressBar: true,
+				theme: "dark",
+				transition: Slide,
+			});
+		} else {
+			setDarkMode(false);
+			toast.success("ライトモードに変換しました！", {
+				position: "top-center",
+				autoClose: 1000,
+				hideProgressBar: true,
+				theme: "light",
+				transition: Slide,
+			});
+		}
+	}
+
 	function handleTopbarColor() {
 		if (!params.slug) {
 			if (topbarColor) {
@@ -156,7 +179,7 @@ const Topbar = ({ className }: { className?: string }) => {
 				{/* Icon dark mode  */}
 				<div
 					className="sm:hidden  cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-all p-2 rounded-full"
-					onClick={() => setDarkMode(!darkMode)}
+					onClick={() => handleDarkMode()}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
