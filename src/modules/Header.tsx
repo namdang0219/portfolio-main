@@ -30,9 +30,9 @@ const Header = ({ className }: IHeader) => {
 				<div className="text-[22px]  h-8 sm:text-[14px] font-light text-center mb-4 sm:mb-2">
 					<TypeAnimation
 						sequence={[
-							"私はデザインエンジニアです！",
+							"私はフロントエンジニアです！",
 							1000,
-							"I'm a Design Engineer！",
+							"I'm a Frontend Engineer！",
 							1000,
 						]}
 						wrapper="span"

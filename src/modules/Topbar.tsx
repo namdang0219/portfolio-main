@@ -131,23 +131,23 @@ const Topbar = ({ className }: { className?: string }) => {
 	}, []);
 
 	function handleDarkMode() {
+		const options: any = {
+			position: "top-center",
+			autoClose: 1000,
+			hideProgressBar: true,
+			transition: Slide,
+		};
 		if (darkMode == false) {
 			setDarkMode(true);
 			toast.success("ダークモードに変換しました！", {
-				position: "top-center",
-				autoClose: 1000,
-				hideProgressBar: true,
+				...options,
 				theme: "dark",
-				transition: Slide,
 			});
 		} else {
 			setDarkMode(false);
 			toast.success("ライトモードに変換しました！", {
-				position: "top-center",
-				autoClose: 1000,
-				hideProgressBar: true,
+				...options,
 				theme: "light",
-				transition: Slide,
 			});
 		}
 	}
@@ -178,7 +178,7 @@ const Topbar = ({ className }: { className?: string }) => {
 				<Nav className="sm:hidden"></Nav>
 				{/* Icon dark mode  */}
 				<div
-					className="sm:hidden  cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-all p-2 rounded-full"
+					className={`sm:hidden  cursor-pointer ${!topbarColor && !params.slug && 'hover:bg-gray-700'} hover:bg-gray-100 dark:hover:bg-gray-700 transition-all p-2 rounded-full`}
 					onClick={() => handleDarkMode()}
 				>
 					<svg
