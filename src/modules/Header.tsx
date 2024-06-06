@@ -32,7 +32,7 @@ const Header = ({ className }: IHeader) => {
 						sequence={[
 							"私はフロントエンジニアです！",
 							1000,
-							"I'm a Frontend Engineer！",
+							"I'm a Frontend Engineer！", 
 							1000,
 						]}
 						wrapper="span"

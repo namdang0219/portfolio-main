@@ -58,7 +58,7 @@ const About = ({ className }: IAbout) => {
 export default About;
 
 function AboutContent({}) {
-	const {push} = useRouter()
+	const { push } = useRouter();
 	return (
 		<div>
 			<Title className="sm:text-center">About Me</Title>
@@ -70,8 +70,21 @@ function AboutContent({}) {
 				デザインの面もやっていて、色々な作品を自分でデザインしてから、コーディングを行なってます。
 			</p>
 			<div className="flex items-center space-x-6 sm:justify-center">
-				<Button onClick={() => push('/#contact')} className="bg-black text-white">Contact Me</Button>
-				<Button>Download CV</Button>
+				<Button
+					onClick={() => push("/#contact")}
+					className="bg-black text-white"
+				>
+					Contact Me
+				</Button>
+				<Button
+					onClick={() =>
+						push(
+							"https://drive.google.com/file/d/13p03kMnmMnDw93ficLYdiOeQX0TyOpBu/view"
+						)
+					}
+				>
+					Download CV
+				</Button>
 			</div>
 		</div>
 	);
